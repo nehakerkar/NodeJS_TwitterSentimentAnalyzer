@@ -1,0 +1,34 @@
+extends layout
+// Define basic data fields using Jade’s mixin features
+// Bind to those data fields for dynamic updates
+
+//mixin metric(tweet,love,hate,total)
+
+block styles
+	// link(rel='stylesheet',href='/stylesheets/dashboard.css')
+
+block scripts
+	// enable socket.io communication on the client-side
+	script(src='/socket.io/socket.io.js')
+	script(src='/javascripts/client.socket.io.js')
+
+block content
+	div(class="container")
+		div.page-header: h1 Twitter Sentiments Analysis
+		div(class="row")
+			div(class="col-lg-3")
+				//+metric("ss-tweet","ss-love","ss-hate","ss-total")
+				div(class="panel panel-default",id="#{tweet}-metric" )
+					div(class="panel-body metric")
+						h1(id="total")= "Total"
+					div(class="panel-body metric")
+						h1(id="love")= "Love"
+					div(class="panel-body metric")
+						h1(id="hate")= "Hate"
+					div(class="panel-body metric")
+						table
+							td
+								tr="Love Tweets"
+									ul#tweetlist-love
+								tr="Hate Tweets"
+									ul#tweetlist-hate

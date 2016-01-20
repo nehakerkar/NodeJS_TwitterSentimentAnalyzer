@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-theme.min.css">
+    <!-- link(rel='stylesheet',href='/stylesheets/dashboard.css')-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>Twitter Sentiments Analysis</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <!--+metric("ss-tweet","ss-love","ss-hate","ss-total")-->
+          <div id="undefined-metric" class="panel panel-default">
+            <div class="panel-body metric">
+              <h1 id="total">Total</h1>
+            </div>
+            <div class="panel-body metric">
+              <h1 id="love">Love</h1>
+            </div>
+            <div class="panel-body metric">
+              <h1 id="hate">Hate</h1>
+            </div>
+            <div class="panel-body metric">
+              <table>
+                <td>
+                  <tr>Love Tweets
+                    <ul id="tweetlist-love"></ul></tr>
+                  <tr>Hate Tweets
+                    <ul id="tweetlist-hate"></ul></tr>
+                </td>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add any default content if any-->
+  </body>
+  <script src="/javascripts/jquery.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <!-- enable socket.io communication on the client-side-->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/javascripts/client.socket.io.js"></script>
+</html>
